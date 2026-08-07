@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <meta name="description" content="Portfolio of Ujjwal Raj – Data Science Enthusiast, ECE with Data Science Specialization. Passionate about Machine Learning, AI, and solving real-world problems." />
+  <meta name="keywords" content="data science, machine learning, AI, portfolio, Python, ECE, Ujjwal Raj" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <div id="particles-bg" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Ujjwal Raj - Home">
+        <span class="logo-text">UR</span>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+        <li><a href="#volunteering" class="nav-link" data-section="volunteering">Volunteering</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <i class="fas fa-chart-line"></i>
+        <span>Available for Opportunities</span>
+      </div>
+      <div class="hero-avatar reveal">
+        <img src="images/data science.jpg" alt="Ujjwal Raj - Data Science Portfolio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="avatar-fallback" style="display:none;">
+          <i class="fas fa-user-astronaut"></i>
+        </div>
+      </div>
+      <h1 class="hero-name reveal">
+        <span class="name-gradient">Ujjwal Raj</span>
+      </h1>
+      <div class="hero-tagline reveal">
+        <span class="tag-text" id="taglineText">Data Science Enthusiast | ECE with Specialization in Data Science</span>
+      </div>
+      <p class="hero-desc reveal">
+        Curious about <strong>New Technology</strong>, <strong>AI</strong>, and solving real-world problems using data.<br />
+        Building intelligent solutions that bridge technology and human impact.
+      </p>
+      <div class="hero-buttons reveal">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-rocket"></i> View Projects
+        </a>
+        <a href="Resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+          View Resume
+          </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fas fa-envelope"></i> Contact Me
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <a href="#education" aria-label="Scroll to Education section">
+        <div class="scroll-dot"></div>
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Background</span>
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">My academic journey and qualifications</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="edu-card">
+              <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="edu-info">
+                <span class="edu-year">2023 – 2027</span>
+                <h3>B.Tech in ECE with Specialization in Data Science</h3>
+                <p class="edu-institution"><i class="fas fa-university"></i>SRM Institue of Science and Technology</p>
+                <div class="edu-meta">
+                  <span class="cgpa-badge"><i class="fas fa-star"></i> CGPA: 9.49 / 10</span>
+                  <span class="status-badge active">Pursuing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="edu-card">
+              <div class="edu-icon"><i class="fas fa-school"></i></div>
+              <div class="edu-info">
+                <span class="edu-year">2021 – 2022</span>
+                <h3>Grade 12</h3>
+                <p class="edu-institution"><i class="fas fa-university"></i> GD Goenka Public School, Patna</p>
+                <div class="edu-meta">
+                  <span class="cgpa-badge"><i class="fas fa-star"></i> Percentage: 77%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="edu-card">
+              <div class="edu-icon"><i class="fas fa-book"></i></div>
+              <div class="edu-info">
+                <span class="edu-year">2019 – 2020</span>
+                <h3>Grade 10</h3>
+                <p class="edu-institution"><i class="fas fa-university"></i> GD Goenka Public School, Patna</p>
+                <div class="edu-meta">
+                  <span class="cgpa-badge"><i class="fas fa-star"></i> Percentage: 88.60%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">Technologies and tools I work with</p>
+      </div>
+      <div class="skills-categories">
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="fas fa-code"></i> Programming Languages</h3>
+          <div class="skills-grid">
+            <div class="skill-card" data-skill="Python">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /></div>
+              <span>Python</span>
+            </div>
+            <div class="skill-card" data-skill="SQL">
+              <div class="skill-icon"><i class="fa-solid fa-database fa-3x"></i></div>
+              <span>SQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="fas fa-brain"></i> Data Science & ML</h3>
+          <div class="skills-grid">
+            <div class="skill-card" data-skill="Machine Learning">
+              <div class="skill-icon"><i class="fas fa-robot" style="color:#7c3aed;font-size:2rem;"></i></div>
+              <span>Machine Learning</span>
+            </div>
+            <div class="skill-card" data-skill="TensorFlow">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" /></div>
+              <span>TensorFlow</span>
+            </div>
+            <div class="skill-card" data-skill="Pandas">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" /></div>
+              <span>Pandas</span>
+            </div>
+            <div class="skill-card" data-skill="NumPy">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" /></div>
+              <span>NumPy</span>
+            </div>
+            <div class="skill-card" data-skill="Scikit-learn">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" /></div>
+              <span>Scikit-learn</span>
+            </div>
+            <div class="skill-card" data-skill="Matplotlib">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" /></div>
+              <span>Matplotlib</span>
+            </div>
+              <div class="skill-card" data-skill="Seaborn">
+              <div class="skill-icon"><img src="images/seaborn.svg" alt="Seaborn" /></div>
+              <span>Seaborn</span>
+            </div>
+            <div class="skill-card" data-skill="Deep Learning">
+              <div class="skill-icon"><i class="fas fa-network-wired" style="color:#8b5cf6;font-size:2rem;"></i></div>
+              <span>Deep Learning</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="fas fa-tools"></i> Tools & Platforms</h3>
+          <div class="skills-grid">
+            <div class="skill-card" data-skill="Github Copliot">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/callback-io/allogo@main/public/logos/github-copilot/icon.svg" alt="Github Copilot"></i></div>
+              <span>Github Copilot</span>
+            </div>
+            <div class="skill-card" data-skill="Excel">
+              <div class="skill-icon"><i class="fas fa-file-excel" style="color:#22c55e;font-size:2rem;"></i></div>
+              <span>Excel</span>
+            </div>
+            <div class="skill-card" data-skill="Azure">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" /></div>
+              <span>Microsoft Azure</span>
+            </div>
+            <div class="skill-card" data-skill="Git">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" /></div>
+              <span>Git</span>
+            </div>
+              <div class="skill-card" data-skill="LangChain">
+              <div class="skill-icon"><img src="https://raw.githubusercontent.com/langchain-ai/.github/main/profile/logo-dark.svg" alt="LangChain" /></div>
+              <span>LangChain</span>
+            </div>
+              <div class="skill-card" data-skill="Streamlit">
+              <div class="skill-icon"><img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit" /></div>
+              <span>Streamlit</span>
+            </div>
+            <div class="skill-card" data-skill="Jupyter">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" /></div>
+              <span>Jupyter</span>
+            </div>
+            <div class="skill-card" data-skill="VS Code">
+              <div class="skill-icon"><img src="https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg" alt="VS Code"></i></div>
+              <span>VS Code</span>
+            </div>
+              <div class="skill-card" data-skill="CodeLite">
+              <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@b3019d95b3c82527119494f67f2d4c930417913f/icons/codelite.png" alt="CodeLite"></i></div>
+              <span>CodeLite</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title"><i class="fas fa-globe"></i>Database</h3>
+          <div class="skills-grid">
+            <div class="skill-card" data-skill="MySQL">
+              <div class="skill-icon"><img src="https://www.svgrepo.com/show/303251/mysql-logo.svg" alt="MySQL" /></div>
+              <span>MySQL</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-robot"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/ujjwalraj16/study-planner-agent" target="_blank" rel="noopener" aria-label="GitHub Repository" class="project-link-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Study Planner Agent</h3>
+          <p>Built an AI-powered web application that generates personalized study plans using the Gemini API to provide intelligent learning recommendations based on user goals and available study time</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Gemini API</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">HTML/CSS</span>
+            <span class="tech-tag">Flask</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-magnifying-glass"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/ujjwalraj16/EmotionLens" target="_blank" rel="noopener" aria-label="GitHub Repository" class="project-link-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>EmotionLens</h3>
+          <p>Developed a real-time text emotion recognition system using a CNN trained on ~58,000 samples, detecting 28 emotional states from user-generated text with 83% accuracy.</p><p>Built an end-to-end NLP pipeline with preprocessing and model inference; visualized emotion distribution and confidence metrics via an interactive dashboard.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">CNN</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">PyPDF</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-file-pdf"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/ujjwalraj16/AskMyPDF.git" target="_blank" rel="noopener" aria-label="GitHub Repository" class="project-link-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>AskMyPDF</h3>
+          <p>Designed and developed an AI-powered web application for interacting with multiple PDF documents, featuring semantic search and supporting OpenAI and Hugging Face models via LangChain with a session-based interactive interface</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">OpenAI API</span>
+            <span class="tech-tag">FAISS</span>
+            <span class="tech-tag">PyPDF</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-film"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/ujjwalraj16/Netflix-Data-Analysis.git" target="_blank" rel="noopener" aria-label="GitHub Repository" class="project-link-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Netflix Data Analysis</h3>
+          <p>Performed exploratory data analysis (EDA) on a dataset of ~7,800 Netflix titles with 11 attributes to uncover patterns in content distribution and audience trends. Leveraged LLMs to assist with data interpretation and analytical automation supporting data-driven understanding of Netflix global content strategy</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">NumPy</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Seaborn</span>
+            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">LLM</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-university"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/ujjwalraj16/Bank-Loan-Approval.git" target="_blank" rel="noopener" aria-label="GitHub Repository" class="project-link-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Bank Loan Approval</h3>
+          <p>Designed a Loan Approval Prediction System to classify loan applications based on applicant financial and demographic features. Performed (EDA) to identify key factors influencing loan approvals and evaluated predictive models achieving 70% accuracy with Logistic Regression and improved performance by 28% with Random Forest</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">Seaborn</span>
+            <span class="tech-tag">Random Forest</span>
+            <span class="tech-tag">GridSearchCV</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-hotel"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/ujjwalraj16/Airbnb-Hotel-Booking-Analysis.git" target="_blank" rel="noopener" aria-label="GitHub Repository" class="project-link-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Airbnb Hotel Booking Analysis</h3>
+          <p>Conducted an in-depth data analysis to uncover insights into booking trends and host performance metrics on the dataset containing over 100,000+ listings. Visualized data to highlight trends in pricing, availability, and review metrics across neighbourhoods</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Plotly</span>
+            <span class="tech-tag">NumPy</span>
+            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">Seaborn</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/ujjwalraj16/Comment-Toxicity-Analyzer.git" target="_blank" rel="noopener" aria-label="GitHub Repository" class="project-link-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Toxic Comments Analyzer</h3>
+          <p>A web app trained on a Bi-LSTM based NLP model on ~159,000 text samples to perform multi-label toxic comment classification, achieving 91% precision and 93% recall</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Gradio</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">Bi-LSTM</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">NumPy</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-icon"><i class="fas fa-home"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/ujjwalraj16/House-Prediction.git" target="_blank" rel="noopener" aria-label="GitHub Repository" class="project-link-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>House Price Prediction</h3>
+          <p>Designed a regression model to predict house prices using location, size, and number of households by using Random Forest and GridSearchCV for hyperparameter tuning, achieving 81% accuracy</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">GridSearchCV</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-subtitle">Professional certifications and courses completed</p>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card reveal">
+          <div class="cert-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon" style="width:30px; height:30px;"></div>
+          <div class="cert-info">
+            <h3>AI Practitioner (AIF-C01)</h3>
+            <p class="cert-org">Amazon Web Services</p>
+            <p class="cert-year">Mar 2026</p>
+        </div>
+          <a href="https://drive.google.com/file/d/1Ach9FPlHOQOrQbw8ci70Luhba7tyjTEG/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" style="width:30px; height:30px;"></div>
+          <div class="cert-info">
+            <h3>Azure AI Engineer Associate (AI-102)</h3>
+            <p class="cert-org">Microsoft</p>
+            <p class="cert-year">Aug 2025</p>
+          </div>
+          <a href="https://drive.google.com/file/d/1vtHgWmgaQAk8xK1mrI7JjHYH0a93nfx6/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" style="width:30px; height:30px;"></div>
+          <div class="cert-info">
+            <h3>Azure AI Fundamentals (AI-900)</h3>
+            <p class="cert-org">Microsoft</p>
+            <p class="cert-year">June 2025</p>
+          </div>
+          <a href="https://drive.google.com/file/d/1aFQKduTEDDBkFQ_vVwRR8BBIf2Fa21Wm/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" style="width:30px; height:30px;"></div>
+          <div class="cert-info">
+            <h3>Azure Data Engineer Associate (DP-203)</h3>
+            <p class="cert-org">Microsoft</p>
+            <p class="cert-year">Sep 2024</p>
+          </div>
+          <a href="https://drive.google.com/file/d/16aWgfU9zaZyStZHH38z0rvPy51ogqDPW/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" style="width:30px; height:30px;"></div>
+          <div class="cert-info">
+            <h3>Azure Data Fundamentals (DP-900)</h3>
+            <p class="cert-org">Microsoft</p>
+            <p class="cert-year">July 2024</p>
+          </div>
+          <a href="https://drive.google.com/file/d/1S1wRbFSCdQ082XB4Bt53IHzzKhcqooBl/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge"><i class="fab fa-hackerrank" style="color:#00EA64;"></i></div>
+          <div class="cert-info">
+            <h3>SQL & Python</h3>
+            <p class="cert-org">HackerRank</p>
+            <p class="cert-year">Aug 2024/July 2026</p>
+          </div>
+          <a href="https://drive.google.com/drive/folders/1AcssxgaekuJLNjzzg3hiTwWywzbSAU1x?usp=sharing" target="_blank" rel="noopener" class="cert-btn">View Certificates <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM"></div>
+          <div class="cert-info">
+            <h3>Machine Learning with Python</h3>
+            <p class="cert-org">IBM – Coursera</p>
+            <p class="cert-year">Sep 2025</p>
+          </div>
+          <a href="https://drive.google.com/file/d/1Hj2gY5QGrc8de-dg1B98cQbBOGj-HTAg/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt='Cisco'></div>
+          <div class="cert-info">
+            <h3>Data Analytics Essentials</h3>
+            <p class="cert-org">Cisco</p>
+            <p class="cert-year">April 2025</p>
+          </div>
+          <a href="https://drive.google.com/file/d/1JbPGtLg6wnvcBpFFkCdk-KkKLJAJpDtY/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg" alt="Udemy"></div>
+          <div class="cert-info">
+            <h3>Complete Data Structures and Algorithms in Python</h3>
+            <p class="cert-org">Udemy</p>
+            <p class="cert-year">Jan 2025</p>
+          </div>
+          <a href="https://drive.google.com/file/d/15hton--m36kKTPjMORhnMBCu76rawvHo/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">View Certificate <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Career</span>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">Professional journey and internships</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot timeline-dot--exp"></div>
+          <div class="timeline-content">
+            <div class="exp-card">
+              <div class="exp-header">
+                <div>
+                  <h3>Intern</h3>
+                  <p class="exp-org"><i class="fas fa-building"></i>Vodafone Intelligent Solutions (AICTE)</p>
+                </div>
+                <span class="exp-duration"><i class="fas fa-calendar-alt"></i> Sep 2025 – Oct 2025</span>
+              </div>
+              <ul class="exp-responsibilities">
+              <li>Delivered end-to-end data analytics projects under VOIS–AICTE, covering data cleaning, preprocessing, and exploratory data analysis.</li>
+              <li>Analyzed large datasets to uncover key trends, patterns, and correlations, transforming raw data into meaningful insights.</li>
+              <li>Applied Large Language Models (LLMs) with prompt engineering techniques to query datasets and generate actionable insights.</li>
+              <li>Worked with both structured and unstructured data to extract valuable information and support data-driven decision making.</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Data Analytics</span>
+                <span class="tech-tag">Julius AI</span>
+                <span class="tech-tag">Data Cleaning</span>
+                <span class="tech-tag">Data Visualization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Milestones</span>
+        <h2 class="section-title">Achievements</h2>
+        <p class="section-subtitle">Recognitions and accomplishments</p>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-card reveal">
+          <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+          <h3>Academic Topper Appreciation</h3>
+          <p>Awarded for achieving the highest Grade Point in the Third Year among the class</p>
+        <div class="achievement-meta">
+          <a href="https://drive.google.com/file/d/1Yn2O42ZmtHiwhXPaHFpv2NnWTsRcp2jl/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">
+            View Certificate <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-icon"><i class="fas fa-award"></i></div>
+          <h3>Performance Based Scholarship</h3>
+          <p>Granted a scholarship for demonstrating exceptional academic proficiency</p>
+          <div class="achievement-meta">
+            <a href="https://drive.google.com/file/d/1rPFjPMVeYeufIhSFTXtSMamELTkVajs6/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">
+              View Certificate <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteering Section -->
+  <section id="volunteering" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Community</span>
+        <h2 class="section-title">Volunteering</h2>
+        <p class="section-subtitle">Giving back to the community</p>
+      </div>
+      <div class="volunteer-grid">
+        <div class="volunteer-card reveal">
+          <div class="volunteer-header">
+            <div class="volunteer-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrSp7E2aLJjTjfj2jqafxRWxaobNeJ4JDhEw&s" alt="GSH"></div>
+            <div>
+              <h3>Volunteer</h3>
+              <p class="volunteer-org">Green Sunrise Hills Foundation, Pune</p>
+            </div>
+          </div>
+          <p class="volunteer-desc">Participated in a structured environmental volunteering initiative with Green Sunrise Hills Foundation, contributing to urban afforestation and ecological restoration by preparing land, removing invasive species, and planting native saplings across barren areas.</p>
+          <p class="volunteer-desc">This experience gave me hands-on exposure to sustainable practices, teamwork, and environmental conservation, broadening my perspective on creating a greener, sustainable environment.</p>
+      <div class="volunteer-meta">
+        <span><i class="fas fa-calendar-alt"></i> June 2025 – July 2025</span>
+        <a href="https://drive.google.com/file/d/1qwRTzAW-d2jdoOb95tHGnGAXGrXpxN57/view?usp=sharing" target="_blank" rel="noopener" class="cert-btn">
+          View Certificate <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-subtitle">Let's collaborate on something amazing</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <a href="mailto:ujjwal0904@gmail.com">Email</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <a href="https://www.linkedin.com/in/ujjwalraj16" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <a href="https://github.com/ujjwalraj16" target="_blank" rel="noopener">Github</a>
+            </div>
+          </div>
+        </div>
+        <form id="contactForm" class="contact-form reveal" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name" />
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Collaboration" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <div class="form-group attachment-group">
+          <!-- Hidden actual file input -->
+          <input type="file" id="attachments" name="files" multiple accept=".png,.jpg,.jpeg,.gif,.webp,.pdf,.doc,.docx,.txt,.zip" style="display: none;"/>
+
+          <button type="button" id="attachBtn" class="attach-btn" aria-label="Attach files">
+            <i class="fas fa-paperclip"></i>
+            <span>Attach files</span>
+          </button>
+          <!-- Selected file chips render here -->
+          <div id="attachmentList" class="attachment-list"></div>
+          <span class="form-error" id="attachmentsError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+            <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Form Success Modal -->
+    <div class="form-success-modal" id="successModal" aria-hidden="true" role="dialog">
+      <div class="success-content">
+        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>Message Sent!</h3>
+        <p>Thank you for reaching out. I'll get back to you soon!</p>
+        <button class="btn btn-primary" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="logo-text">UR</span>
+        <p>Ujjwal Raj</p>
+        <p class="footer-tagline">Data Professional</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ujjwalraj16" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/ujjwalraj16" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.hackerrank.com/profile/ujjwal0904" target="_blank" rel="noopener" aria-label="HackerRank" class="social-icon"><i class="fab fa-hackerrank"></i></a>
+        <a href="mailto:ujjwalraj@email.com" aria-label="Email" class="social-icon"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ujjwal Raj. All rights reserved. Built with <i class="fas fa-heart" style="color:#f43f5e;"></i> and passion.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
