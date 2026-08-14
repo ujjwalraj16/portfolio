@@ -43,29 +43,6 @@ def home():
         'status': 'ok',
         'message': 'Portfolio contact API is running'
     })
-@app.route('/test-mail', methods=['GET'])
-def test_mail():
-    try:
-        msg = Message(
-            subject='Render Gmail Test',
-            sender=app.config['MAIL_DEFAULT_SENDER'],
-            recipients=[app.config['MAIL_USERNAME']],
-            body='This is a test email from the Render Flask backend.'
-        )
-
-        mail.send(msg)
-
-        return jsonify({
-            'success': True,
-            'message': 'Test email sent'
-        })
-
-    except Exception as error:
-        print(f"MAIL ERROR: {error}")
-        return jsonify({
-            'success': False,
-            'error': str(error)
-        }), 500
 @app.route('/api/contact', methods=['POST'])
 def contact_form():
     try:
@@ -114,6 +91,28 @@ def contact_form():
         print(f"Error: {str(error)}")
         return jsonify({'success': False, 'message': 'Failed to send message'}), 500
 
+@app.route('/test-mail', methods=['GET'])
+def test_mail():
+    try:
+        msg = Message(
+            subject='Render Gmail Test',
+            sender=app.config['MAIL_DEFAULT_SENDER'],
+            recipients=[app.config['MAIL_USERNAME']],
+            body='This is a test email from Render Flask.'
+        )
 
+        mail.send(msg)
+
+        return jsonify({
+            'success': True,
+            'message': 'Test email sent'
+        })
+
+    except Exception as error:
+        print(f"MAIL ERROR: {error}")
+        return jsonify({
+            'success': False,
+            'error': str(error)
+        }), 500
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5001)), debug=True)
