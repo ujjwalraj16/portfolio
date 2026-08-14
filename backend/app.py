@@ -16,9 +16,9 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER', 'smtp.gmail.com')
 app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT', 587))
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.getenv('EMAIL_USER')
-app.config['MAIL_PASSWORD'] = os.getenv('EMAIL_PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = os.getenv('EMAIL_USER')
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
 
 # Max total upload size: 15 MB (Gmail's limit is 25MB, leave headroom)
 app.config['MAX_CONTENT_LENGTH'] = 15 * 1024 * 1024
@@ -37,6 +37,12 @@ MAX_FILES = 5
 def is_allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route('/')
+def home():
+    return jsonify({
+        'status': 'ok',
+        'message': 'Portfolio contact API is running'
+    })
 
 @app.route('/api/contact', methods=['POST'])
 def contact_form():
@@ -64,12 +70,12 @@ def contact_form():
                     'message': f'File type not allowed: {f.filename}'
                 }), 400
 
-        msg = Message(
-            subject=f"New message from {name}",
-            recipients=[os.getenv('OWNER_EMAIL', os.getenv('EMAIL_USER'))],
-            body=message,
-            reply_to=email
-        )
+            msg = Message(
+                subject=f"New message from {name}",
+                recipients=[os.getenv('MAIL_USERNAME')],
+                body=message,
+                reply_to=email
+            )
 
         # Attach each uploaded file to the email
         for f in uploaded_files:
