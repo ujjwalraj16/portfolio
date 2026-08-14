@@ -70,12 +70,11 @@ def contact_form():
                     'message': f'File type not allowed: {f.filename}'
                 }), 400
 
-            msg = Message(
-                subject=f"New message from {name}",
-                recipients=[os.getenv('MAIL_USERNAME')],
-                body=message,
-                reply_to=email
-            )
+        msg = Message(
+            subject=f"New message from {name}",
+            recipients=[os.getenv('MAIL_USERNAME')],
+            body=message,
+            reply_to=email)
 
         # Attach each uploaded file to the email
         for f in uploaded_files:
