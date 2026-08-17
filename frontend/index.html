@@ -637,52 +637,25 @@
             </div>
           </div>
         </div>
-        <form id="contactForm" class="contact-form reveal" novalidate>
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name" />
-            <span class="form-error" id="nameError"></span>
+        <!-- WhatsApp Chat Widget -->
+        <div class="whatsapp-card reveal" id="whatsappCard">
+          <!-- Input Area -->
+          <div class="wa-input-area">
+            <div class="wa-field-group">
+              <label for="waName">Name</label>
+              <input type="text" id="waName" placeholder="Your name" autocomplete="name" />
+              <span class="wa-error" id="waNameError"></span>
+            </div>
+            <div class="wa-field-group">
+              <label for="waMessage">Message</label>
+              <textarea id="waMessage" rows="5" placeholder="Write your custom message here…"></textarea>
+              <span class="wa-error" id="waMessageError"></span>
+            </div>
+            <button class="wa-send-btn" id="waSendBtn" onclick="sendWhatsApp()">
+              <i class="fas fa-paper-plane"></i> Send via WhatsApp
+            </button>
           </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
-            <span class="form-error" id="emailError"></span>
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Project Collaboration" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
-            <span class="form-error" id="messageError"></span>
-          </div>
-          <div class="form-group attachment-group">
-          <!-- Hidden actual file input -->
-          <input type="file" id="attachments" name="files" multiple accept=".png,.jpg,.jpeg,.gif,.webp,.pdf,.doc,.docx,.txt,.zip" style="display: none;"/>
-
-          <button type="button" id="attachBtn" class="attach-btn" aria-label="Attach files">
-            <i class="fas fa-paperclip"></i>
-            <span>Attach files</span>
-          </button>
-          <!-- Selected file chips render here -->
-          <div id="attachmentList" class="attachment-list"></div>
-          <span class="form-error" id="attachmentsError"></span>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
-            <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
-            <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
-          </button>
-        </form>
-      </div>
-    </div>
-    <!-- Form Success Modal -->
-    <div class="form-success-modal" id="successModal" aria-hidden="true" role="dialog">
-      <div class="success-content">
-        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-        <h3>Message Sent!</h3>
-        <p>Thank you for reaching out. I'll get back to you soon!</p>
-        <button class="btn btn-primary" onclick="closeModal()">Close</button>
+        </div>
       </div>
     </div>
   </section>

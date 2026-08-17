@@ -1244,34 +1244,45 @@ ul, ol { list-style: none; }
   color: var(--accent);
 }
 
-/* === CONTACT FORM === */
-.contact-form {
+/* === WHATSAPP CHAT CARD === */
+.whatsapp-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 36px;
+  border-radius: 24px;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
 }
 
-.form-group {
-  margin-bottom: 22px;
+/* Input area */
+.wa-input-area {
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--bg-card);
 }
 
-.form-group label {
-  display: block;
-  font-size: 0.85rem;
+.wa-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wa-field-group label {
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-secondary);
-  margin-bottom: 8px;
+  letter-spacing: 0.03em;
 }
 
-.form-group input,
-.form-group textarea {
+.wa-field-group input,
+.wa-field-group textarea {
   width: 100%;
   background: var(--bg-input);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 12px 16px;
+  border-radius: 18px;
+  padding: 13px 18px;
   font-size: 0.9rem;
   color: var(--text-primary);
   font-family: var(--font-primary);
@@ -1279,155 +1290,62 @@ ul, ol { list-style: none; }
   resize: vertical;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.wa-field-group input:focus,
+.wa-field-group textarea:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  border-color: #25d366;
+  box-shadow: 0 0 0 3px rgba(37,211,102,0.15);
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+.wa-field-group input::placeholder,
+.wa-field-group textarea::placeholder {
   color: var(--text-muted);
 }
 
-.form-group input.error,
-.form-group textarea.error {
+.wa-field-group input.wa-input-error,
+.wa-field-group textarea.wa-input-error {
   border-color: #ef4444;
 }
 
-.form-error {
-  display: block;
-  font-size: 0.78rem;
+.wa-error {
+  font-size: 0.76rem;
   color: #ef4444;
-  margin-top: 5px;
-}
-/* === ATTACHMENT BUTTON (paperclip, Gmail-style) === */
-.attach-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg-input);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  padding: 10px 18px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  font-family: var(--font-primary);
-  transition: var(--transition);
+  min-height: 16px;
 }
 
-.attach-btn:hover {
-  border-color: var(--accent);
-  background: var(--accent-glow);
-  color: var(--accent);
-}
-
-.attach-btn i {
-  font-size: 0.95rem;
-  transform: rotate(45deg);
-}
-
-.attachment-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.attachment-chip {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--accent-glow);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  padding: 5px 12px;
-  font-size: 0.8rem;
-  color: var(--text-primary);
-  max-width: 220px;
-}
-
-.attachment-chip .chip-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.attachment-chip .chip-remove {
-  cursor: pointer;
-  border: none;
-  background: none;
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1;
-  transition: var(--transition);
-}
-
-.attachment-chip .chip-remove:hover {
-  color: #ef4444;
-}
-
-/* === SUCCESS MODAL === */
-.form-success-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  z-index: 2000;
+/* Send button */
+.wa-send-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+  gap: 10px;
+  background: var(--accent-gradient);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 15px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(99, 102, 241, 0.35);
+  letter-spacing: 0.02em;
+  width: 100%;
 }
 
-.form-success-modal.show {
-  opacity: 1;
-  pointer-events: all;
+.wa-send-btn i {
+  font-size: 1rem;
 }
 
-.success-content {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 48px;
-  text-align: center;
-  max-width: 380px;
-  width: calc(100% - 48px);
-  transform: scale(0.9);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: var(--shadow-lg);
+.wa-send-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(99, 102, 241, 0.5);
+  filter: brightness(1.1);
 }
 
-.form-success-modal.show .success-content { transform: scale(1); }
-
-.success-icon {
-  font-size: 3.5rem;
-  color: #22c55e;
-  margin-bottom: 20px;
-  display: block;
-  animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes pop-in {
-  from { transform: scale(0); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.success-content h3 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: var(--text-primary);
-}
-
-.success-content p {
-  color: var(--text-secondary);
-  margin-bottom: 24px;
+.wa-send-btn:active {
+  transform: translateY(0);
 }
 
 /* === FOOTER === */
@@ -1682,7 +1600,7 @@ ul, ol { list-style: none; }
 
   .volunteer-grid { grid-template-columns: 1fr; }
 
-  .contact-form { padding: 24px; }
+  .whatsapp-card .wa-input-area { padding: 16px 18px 20px; }
 
   .scroll-top { bottom: 20px; right: 20px; }
 }
