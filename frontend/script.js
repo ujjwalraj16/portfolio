@@ -2,6 +2,20 @@ const API_BASE_URL = "https://portfolio-9ukd.onrender.com";;;
 "use strict";
 
 // =============================================
+// HERO IMAGE SLIDESHOW
+// =============================================
+function initHeroSlideshow() {
+  const slides = document.querySelectorAll(".hero-slide");
+  if (!slides.length) return;
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 3500);
+}
+
+// =============================================
 // PARTICLES BACKGROUND
 // =============================================
 function initParticles() {
@@ -12,12 +26,12 @@ function initParticles() {
     document.documentElement.getAttribute("data-theme") !== "light";
   const colors = isDark
     ? [
-        "rgba(79,157,255,0.4)",
-        "rgba(124,58,237,0.3)",
-        "rgba(6,182,212,0.3)",
-        "rgba(79,157,255,0.2)",
-      ]
-    : ["rgba(37,99,235,0.2)", "rgba(124,58,237,0.15)", "rgba(6,182,212,0.15)"];
+      "rgba(162,99,96,0.35)",
+      "rgba(212,162,156,0.25)",
+      "rgba(162,99,96,0.2)",
+      "rgba(212,162,156,0.15)",
+    ]
+    : ["rgba(138,79,76,0.2)", "rgba(194,137,127,0.15)", "rgba(162,99,96,0.12)"];
 
   container.innerHTML = "";
   const count = Math.min(40, Math.floor(window.innerWidth / 30));
@@ -336,197 +350,64 @@ function syncFileInput() {
   attachmentInput.files = dataTransfer.files;
 }
 // =============================================
-// CONTACT FORM VALIDATION & SUBMISSION
 // =============================================
-const contactForm = document.getElementById("contactForm");
-const successModal = document.getElementById("successModal");
+// WHATSAPP CONTACT
+// =============================================
+const WA_NUMBER = "916203038580"; // Country code + number, no + or spaces
 
-function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
+function sendWhatsApp() {
+  const nameEl = document.getElementById("waName");
+  const msgEl = document.getElementById("waMessage");
+  const nameErr = document.getElementById("waNameError");
+  const msgErr = document.getElementById("waMessageError");
 
-function showError(inputId, errorId, message) {
-  const input = document.getElementById(inputId);
-  const error = document.getElementById(errorId);
-  if (input && error) {
-    input.classList.add("error");
-    error.textContent = message;
+  // Reset errors
+  nameErr.textContent = "";
+  msgErr.textContent = "";
+  nameEl.classList.remove("wa-input-error");
+  msgEl.classList.remove("wa-input-error");
+
+  const name = nameEl.value.trim();
+  const message = msgEl.value.trim();
+  let valid = true;
+
+  if (!name || name.length < 2) {
+    nameErr.textContent = "Please enter your name (min 2 chars).";
+    nameEl.classList.add("wa-input-error");
+    valid = false;
   }
-}
-
-function clearError(inputId, errorId) {
-  const input = document.getElementById(inputId);
-  const error = document.getElementById(errorId);
-  if (input && error) {
-    input.classList.remove("error");
-    error.textContent = "";
+  if (!message || message.length < 5) {
+    msgErr.textContent = "Please enter a message (min 5 chars).";
+    msgEl.classList.add("wa-input-error");
+    valid = false;
   }
+  if (!valid) return;
+  // Build WhatsApp URL and open
+  const composed = encodeURIComponent(`Hello, I'm ${name}.\n\n${message}`);
+  const waUrl = `https://wa.me/${WA_NUMBER}?text=${composed}`;
+  window.open(waUrl, "_blank", "noopener,noreferrer");
 }
 
-function clearAllErrors() {
-  clearError("name", "nameError");
-  clearError("email", "emailError");
-  clearError("message", "messageError");
-}
-
-if (contactForm) 
-  // Real-time validation clearing
-  ["name", "email", "message"].forEach((id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener("input", () => {
-        const errorEl = document.getElementById(id + "Error");
-        if (el.value.trim()) {
-          el.classList.remove("error");
-          if (errorEl) errorEl.textContent = "";
-        }
-      });
-    }
-  });
-
-contactForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    clearAllErrors();
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    let isValid = true;
-
-    if (!name || name.length < 2) {
-      showError(
-        "name",
-        "nameError",
-        "Please enter your full name (min 2 chars).",
-      );
-      isValid = false;
-    }
-    if (!email || !validateEmail(email)) {
-      showError("email", "emailError", "Please enter a valid email address.");
-      isValid = false;
-    }
-    if (!message) {
-      showError(
-        "message",
-        "messageError",
-        "Message must be at least 10 characters.",
-      );
-      isValid = false;
-    }
-
-    // Optional: validate attached files (field id "attachments")
-    const fileInput = document.getElementById("attachments");
-    const files = fileInput && fileInput.files ? Array.from(fileInput.files) : [];
-    const MAX_FILES = 5;
-    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB per file (client-side heads-up check)
-
-    if (files.length > MAX_FILES) {
-      showError(
-        "message",
-        "messageError",
-        `You can attach up to ${MAX_FILES} files.`,
-      );
-      isValid = false;
-    }
-
-    for (const file of files) {
-      if (file.size > MAX_FILE_SIZE) {
-        showError(
-          "message",
-          "messageError",
-          `"${file.name}" is too large (max 10MB per file).`,
-        );
-        isValid = false;
-        break;
-      }
-    }
-
-    if (!isValid) return;
-
-    // Show loading state
-    const submitBtn = document.getElementById("submitBtn");
-    const btnText = submitBtn.querySelector(".btn-text");
-    const btnLoading = submitBtn.querySelector(".btn-loading");
-
-    btnText.style.display = "none";
-    btnLoading.style.display = "flex";
-    submitBtn.disabled = true;
-
-    try {
-      // Build multipart form data so files can be sent alongside text fields
-      const formData = new FormData();
-      formData.append("name", name);
-      formData.append("email", email);
-      formData.append("subject", subject);
-      formData.append("message", message);
-
-      files.forEach((file) => {
-        formData.append("files", file);
-      });
-
-      // Note: do NOT set Content-Type header manually — the browser sets
-      // the correct multipart boundary automatically when using FormData.
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send message");
-      }
-
-      // Success
-      contactForm.reset();
-      selectedFiles = [];
-      renderAttachmentChips();
-      if (attachmentInput) attachmentInput.value = "";
-      showSuccessModal();
-    } catch (error) {
-      console.error("Contact form error:", error);
-      showError(
-        "message",
-        "messageError",
-        error.message || "Failed to send message. Please try again later.",
-      );
-    } finally {
-      btnText.style.display = "flex";
-      btnLoading.style.display = "none";
-      submitBtn.disabled = false;
-    }
-  });
-
-function showSuccessModal() {
-  successModal.classList.add("show");
-  successModal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-}
-
-function closeModal() {
-  successModal.classList.remove("show");
-  successModal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-}
-
-// Close modal on backdrop click
-if (successModal) {
-  successModal.addEventListener("click", (e) => {
-    if (e.target === successModal) closeModal();
-  });
-}
-
-// Close modal on Escape key
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && successModal.classList.contains("show")) {
-    closeModal();
+// Real-time error clearing for WhatsApp inputs
+["waName", "waMessage"].forEach((id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener("input", () => {
+      el.classList.remove("wa-input-error");
+      const errEl = document.getElementById(id + "Error");
+      if (errEl) errEl.textContent = "";
+    });
   }
 });
 
+/* legacy stubs – kept to avoid ReferenceErrors if called anywhere */
+function closeModal() {
+  document.body.style.overflow = "";
+}
+
 // Make closeModal globally accessible (called from HTML)
 window.closeModal = closeModal;
+
 
 // =============================================
 // SMOOTH ANCHOR NAVIGATION
@@ -604,6 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroAnimations();
   initTypewriter();
   updateActiveNav();
+  initHeroSlideshow();
 
   // Resize: re-create particles on significant width change
   let lastWidth = window.innerWidth;
