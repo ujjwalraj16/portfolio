@@ -2,6 +2,20 @@ const API_BASE_URL = "https://portfolio-9ukd.onrender.com";;;
 "use strict";
 
 // =============================================
+// HERO IMAGE SLIDESHOW
+// =============================================
+function initHeroSlideshow() {
+  const slides = document.querySelectorAll(".hero-slide");
+  if (!slides.length) return;
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 3500);
+}
+
+// =============================================
 // PARTICLES BACKGROUND
 // =============================================
 function initParticles() {
@@ -471,6 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroAnimations();
   initTypewriter();
   updateActiveNav();
+  initHeroSlideshow();
 
   // Resize: re-create particles on significant width change
   let lastWidth = window.innerWidth;

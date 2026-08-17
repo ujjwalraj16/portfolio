@@ -44,39 +44,46 @@
 
   <!-- Hero Section -->
   <section id="hero" class="hero-section">
-    <div class="hero-content">
-      <div class="hero-badge reveal">
-        <i class="fas fa-chart-line"></i>
-        <span>Available for Opportunities</span>
-      </div>
-      <div class="hero-avatar reveal">
-        <img src="images/data science.jpg" alt="Ujjwal Raj - Data Science Portfolio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="avatar-fallback" style="display:none;">
-          <i class="fas fa-user-astronaut"></i>
+    <div class="hero-inner">
+      <!-- LEFT: Text -->
+      <div class="hero-text reveal">
+        <div class="hero-badge">
+          <span>Hi, I'm 👋</span>
+        </div>
+        <h1 class="hero-name">
+          Ujjwal Raj
+        </h1>
+        <p class="hero-tagline">Data Science &amp; AI Enthusiast</p>
+        <p class="hero-desc">
+          Building intelligent solutions with data, machine learning and modern technologies.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> View Projects
+          </a>
+          <a href="Resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+            View Resume
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fas fa-envelope"></i> Contact Me
+          </a>
         </div>
       </div>
-      <h1 class="hero-name reveal">
-        <span class="name-gradient">Ujjwal Raj</span>
-      </h1>
-      <div class="hero-tagline reveal">
-        <span class="tag-text" id="taglineText">Data Science Enthusiast | ECE with Specialization in Data Science</span>
-      </div>
-      <p class="hero-desc reveal">
-        Curious about <strong>New Technology</strong>, <strong>AI</strong>, and solving real-world problems using data.<br />
-        Building intelligent solutions that bridge technology and human impact.
-      </p>
-      <div class="hero-buttons reveal">
-        <a href="#projects" class="btn btn-primary">
-          <i class="fas fa-rocket"></i> View Projects
-        </a>
-        <a href="Resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
-          View Resume
-          </a>
-        <a href="#contact" class="btn btn-outline">
-          <i class="fas fa-envelope"></i> Contact Me
-        </a>
+
+      <!-- RIGHT: Sliding image -->
+      <div class="hero-visual reveal" id="heroAvatarWrap">
+        <div class="hero-avatar">
+          <div class="hero-slideshow" id="heroSlideshow">
+            <img class="hero-slide active" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=600&fit=crop&auto=format" alt="AI Neural Network" />
+            <img class="hero-slide" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=600&fit=crop&auto=format" alt="Machine Learning Data" />
+            <img class="hero-slide" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop&auto=format" alt="Data Analytics" />
+            <img class="hero-slide" src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?w=600&h=600&fit=crop&auto=format" alt="Deep Learning" />
+            <img class="hero-slide" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=600&h=600&fit=crop&auto=format" alt="Data Science" />
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="hero-scroll-indicator">
       <a href="#education" aria-label="Scroll to Education section">
         <div class="scroll-dot"></div>
@@ -197,7 +204,7 @@
               <span>Matplotlib</span>
             </div>
               <div class="skill-card" data-skill="Seaborn">
-              <div class="skill-icon"><img src="images/seaborn.svg" alt="Seaborn" /></div>
+              <div class="skill-icon"><img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn" /></div>
               <span>Seaborn</span>
             </div>
             <div class="skill-card" data-skill="Deep Learning">
