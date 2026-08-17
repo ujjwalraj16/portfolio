@@ -12,12 +12,12 @@ function initParticles() {
     document.documentElement.getAttribute("data-theme") !== "light";
   const colors = isDark
     ? [
-      "rgba(79,157,255,0.4)",
-      "rgba(124,58,237,0.3)",
-      "rgba(6,182,212,0.3)",
-      "rgba(79,157,255,0.2)",
+      "rgba(162,99,96,0.35)",
+      "rgba(212,162,156,0.25)",
+      "rgba(162,99,96,0.2)",
+      "rgba(212,162,156,0.15)",
     ]
-    : ["rgba(37,99,235,0.2)", "rgba(124,58,237,0.15)", "rgba(6,182,212,0.15)"];
+    : ["rgba(138,79,76,0.2)", "rgba(194,137,127,0.15)", "rgba(162,99,96,0.12)"];
 
   container.innerHTML = "";
   const count = Math.min(40, Math.floor(window.innerWidth / 30));
