@@ -2,20 +2,6 @@ const API_BASE_URL = "https://portfolio-9ukd.onrender.com";;;
 "use strict";
 
 // =============================================
-// HERO IMAGE SLIDESHOW
-// =============================================
-function initHeroSlideshow() {
-  const slides = document.querySelectorAll(".hero-slide");
-  if (!slides.length) return;
-  let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove("active");
-    current = (current + 1) % slides.length;
-    slides[current].classList.add("active");
-  }, 3500);
-}
-
-// =============================================
 // PARTICLES BACKGROUND
 // =============================================
 function initParticles() {
@@ -26,12 +12,12 @@ function initParticles() {
     document.documentElement.getAttribute("data-theme") !== "light";
   const colors = isDark
     ? [
-      "rgba(162,99,96,0.35)",
-      "rgba(212,162,156,0.25)",
-      "rgba(162,99,96,0.2)",
-      "rgba(212,162,156,0.15)",
+      "rgba(79,157,255,0.4)",
+      "rgba(124,58,237,0.3)",
+      "rgba(6,182,212,0.3)",
+      "rgba(79,157,255,0.2)",
     ]
-    : ["rgba(138,79,76,0.2)", "rgba(194,137,127,0.15)", "rgba(162,99,96,0.12)"];
+    : ["rgba(37,99,235,0.2)", "rgba(124,58,237,0.15)", "rgba(6,182,212,0.15)"];
 
   container.innerHTML = "";
   const count = Math.min(40, Math.floor(window.innerWidth / 30));
@@ -353,7 +339,7 @@ function syncFileInput() {
 // =============================================
 // WHATSAPP CONTACT
 // =============================================
-const WA_NUMBER = "916203038580"; // Country code + number, no + or spaces
+const WA_NUMBER = "916203038580"; // Country code + number, no I UPDA=+ or spaces
 
 function sendWhatsApp() {
   const nameEl = document.getElementById("waName");
@@ -382,10 +368,24 @@ function sendWhatsApp() {
     valid = false;
   }
   if (!valid) return;
-  // Build WhatsApp URL and open
+
+  // Show reply bubble preview
+  const bubbleReply = document.getElementById("waBubbleReply");
+  const bubbleText = document.getElementById("waBubbleText");
+  if (bubbleReply && bubbleText) {
+    bubbleText.textContent = `Hello, I'm ${name}. ${message}`;
+    bubbleReply.style.display = "block";
+    bubbleReply.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  // Build WhatsApp URL
   const composed = encodeURIComponent(`Hello, I'm ${name}.\n\n${message}`);
   const waUrl = `https://wa.me/${WA_NUMBER}?text=${composed}`;
-  window.open(waUrl, "_blank", "noopener,noreferrer");
+
+  // Small delay so user sees the bubble, then open WhatsApp
+  setTimeout(() => {
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+  }, 500);
 }
 
 // Real-time error clearing for WhatsApp inputs
@@ -485,7 +485,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroAnimations();
   initTypewriter();
   updateActiveNav();
-  initHeroSlideshow();
 
   // Resize: re-create particles on significant width change
   let lastWidth = window.innerWidth;
