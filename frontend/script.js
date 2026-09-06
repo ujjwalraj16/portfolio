@@ -274,68 +274,6 @@ function initHeroAnimations() {
   });
 }
 // =============================================
-// ATTACHMENT BUTTON (Gmail-style paperclip)
-// =============================================
-const attachBtn = document.getElementById("attachBtn");
-const attachmentInput = document.getElementById("attachments");
-const attachmentList = document.getElementById("attachmentList");
-
-// Keep our own list of selected files (lets us support "remove" per chip,
-// since real FileList objects can't be edited directly)
-let selectedFiles = [];
-
-if (attachBtn && attachmentInput) {
-  // Clicking the paperclip opens the native file picker
-  attachBtn.addEventListener("click", () => {
-    attachmentInput.click();
-  });
-
-  // When user picks files, add them to our list and render chips
-  attachmentInput.addEventListener("change", () => {
-    const newFiles = Array.from(attachmentInput.files);
-    selectedFiles = selectedFiles.concat(newFiles);
-    renderAttachmentChips();
-    syncFileInput();
-  });
-}
-
-function renderAttachmentChips() {
-  if (!attachmentList) return;
-  attachmentList.innerHTML = "";
-
-  selectedFiles.forEach((file, index) => {
-    const chip = document.createElement("div");
-    chip.className = "attachment-chip";
-
-    const name = document.createElement("span");
-    name.className = "chip-name";
-    name.textContent = file.name;
-
-    const removeBtn = document.createElement("button");
-    removeBtn.type = "button";
-    removeBtn.className = "chip-remove";
-    removeBtn.innerHTML = "&times;";
-    removeBtn.setAttribute("aria-label", `Remove ${file.name}`);
-    removeBtn.addEventListener("click", () => {
-      selectedFiles.splice(index, 1);
-      renderAttachmentChips();
-      syncFileInput();
-    });
-
-    chip.appendChild(name);
-    chip.appendChild(removeBtn);
-    attachmentList.appendChild(chip);
-  });
-}
-
-// Keep the actual <input type="file"> in sync with our selectedFiles array
-// so the browser's FileList matches what the user sees as chips
-function syncFileInput() {
-  const dataTransfer = new DataTransfer();
-  selectedFiles.forEach((file) => dataTransfer.items.add(file));
-  attachmentInput.files = dataTransfer.files;
-}
-// =============================================
 // =============================================
 // WHATSAPP CONTACT
 // =============================================
